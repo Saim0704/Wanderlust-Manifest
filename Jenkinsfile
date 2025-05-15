@@ -22,6 +22,7 @@ pipeline {
         stage('Update Manifest'){
             steps{
                 echo "Update Manifest"
+                echo "Image Tag : ${params.IMAGE_TAG}"
                 update_manifest("${env.DOCKER_REPO_NAME}", "${params.IMAGE_TAG}")
             }
         }
